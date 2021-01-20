@@ -1,0 +1,14 @@
+<h1>Buscando: {{word}}</h1>
+<hr>
+<div class='row animated fade-in fast' *ngIf="filteredHeroes.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="Alert">
+            No existen resultados con el término: {{word}}
+        </div>
+    </div>
+</div>
+<div class="card-columns">
+    <app-hero-card [heroe]="hero " [i]='hero.idx' *ngFor="let hero of filteredHeroes;let i=index "></app-hero-card>
+
+
+</div>

@@ -1,0 +1,20 @@
+<div class="card border-primary mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img src={{hero.img}} class="card-img" alt="Imagen de {{hero.nombre}}">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{hero.nombre | uppercase}}</h5>
+                <p class="card-text">Bio: {{hero.bio}}.</p>
+                <div class="card-text" *ngIf='isMarvel; then MarvelImg else OtherImg'></div>
+                <ng-template #MarvelImg> <img src='assets/img/A-64.png' class='' alt='Logo de Marvel' style=" align-self:right; "></ng-template>
+                <ng-template #OtherImg> <img src='assets/img/descarga.jpeg' class='' alt='Logo de otra' width="30" height="30">
+                </ng-template>
+                <a routerLink='/heroes' class='btn btn-outline-primary'>Volver atrás</a>
+
+                <p class="card-text "><small class="text-muted ">Última aparición: {{hero.aparicion | date:'y'}}</small>
+                </p>
+            </div>
+        </div>
+    </div>

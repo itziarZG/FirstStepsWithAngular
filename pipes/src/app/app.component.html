@@ -1,0 +1,108 @@
+<h1 class='mt-3'>Pipes <small>Angular</small></h1>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th> Variable</th>
+                    <th> Pipe</th>
+                    <th> Salida</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td> uppercase</td>
+                    <td>{{nombre | uppercase}}</td>
+                </tr>
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td> lowercase</td>
+                    <td>{{nombre | lowercase}}</td>
+                </tr>
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td> slice:3 (parametro necesitado)</td>
+                    <td>{{nombre | slice:3}}</td>
+                </tr>
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td> slice:0:3</td>
+                    <td>{{nombre | slice:0:3}}</td>
+                </tr>
+                <tr>
+                    <td>{{array}}</td>
+                    <td> slice:1:5 (array)</td>
+                    <td>{{array | slice:1:5}}</td>
+                </tr>
+                <tr>
+                    <td>{{PI}}</td>
+                    <td> number:1.0-0' (sin decimales)</td>
+                    <td>{{PI|number:'1.0-0'}}</td>
+                </tr>
+                <tr>
+                    <td>{{PI}}</td>
+                    <td> number:3.0-0' (si no hay, los crea)</td>
+                    <td>{{PI|number:'3.0-0'}}</td>
+                </tr>
+                <tr>
+                    <td>{{PI}}</td>
+                    <td> number:0.0-2' (0 entero, 2 decimales)</td>
+                    <td>{{PI|number:'.0-2'}}</td>
+                </tr>
+                <tr>
+                    <td>{{percent}}</td>
+                    <td> percent</td>
+                    <td>{{percent|percent}}</td>
+                </tr>
+                <tr>
+                    <td>{{percent}}</td>
+                    <td> percent:'2.0-2'</td>
+                    <td>{{percent|percent:'2.0-2'}}</td>
+                </tr>
+                <tr>
+                    <td>{{currency}}</td>
+                    <td> currency</td>
+                    <td>{{currency|currency}}</td>
+                </tr>
+                <tr>
+                    <td>{{currency}}</td>
+                    <td> currency:'EUR'</td>
+                    <td>{{currency|currency:'EUR'}}</td>
+                </tr>
+                <tr>
+                    <td>{{currency}}</td>
+                    <td> currency:'CAD':'symbol-narrow':'.0-0'</td>
+                    <td>{{currency|currency:'CAD':'symbol-narrow':'.0-0'}}</td>
+                </tr>
+                <tr>
+                    <td>{{currency}}</td>
+                    <td> currency:'inventado'.0-0'</td>
+                    <td>{{currency|currency:'LTP':'symbol':'.0-0'}}</td>
+                </tr>
+                <tr>
+                    <td>{{currency}}</td>
+                    <td> currency:'inventado'.0-0'</td>
+                    <td>{{currency|currency:'LTP':'symbol':'.0-0'}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Slice <small>slice:1:4></small></h3>
+        <hr>
+        <ul lass='list-group'>
+            <li *ngFor="let pers of people |slice:1:4" class="list-group-item">{{pers}}</li>
+        </ul>
+        <h3>JSON</h3>
+        <div class='row mb-5'>
+            <div class='col'>
+                hero | json
+                <pre>
+                {{hero|json}} 
+              </pre> hero.name | json : {{hero.name|json}}
+
+            </div>
+        </div>
+    </div>
+</div>
